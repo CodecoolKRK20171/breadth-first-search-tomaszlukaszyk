@@ -57,4 +57,20 @@ public class UserNode {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName;
+    }
+
+    @Override
+    public int hashCode() {
+        return Long.valueOf(this.id).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof UserNode)) return false;
+        return this.id == ((UserNode)obj).getId();
+    }
 }
